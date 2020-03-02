@@ -15,6 +15,7 @@ anywhere, even as the backing file system for a `VirtualDirectory` from
 `package:angel_static`:
 
 ```dart
+import 'dart:async';
 import 'package:angel_framework/angel_framework.dart';
 import 'package:angel_framework/http.dart';
 import 'package:angel_static/angel_static.dart';
@@ -28,6 +29,8 @@ Future<void> main() async {
     ..onRecord.listen(prettyLog);
 
   var app = Angel(logger: Logger('hdfs_demo'));
+  var http = AngelHttp(app);
+
   var hdfs = HadoopFileSystem('https://host:port');
   var vDir = CachingVirtualDirectory(app, hdfs, source: hdfs.directory('/'));
 

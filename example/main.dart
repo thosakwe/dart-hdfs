@@ -12,6 +12,8 @@ Future<void> main() async {
     ..onRecord.listen(prettyLog);
 
   var app = Angel(logger: Logger('hdfs_demo'));
+  var http = AngelHttp(app);
+
   var hdfs = HadoopFileSystem('https://host:port');
   var vDir = CachingVirtualDirectory(app, hdfs, source: hdfs.directory('/'));
 
