@@ -6,11 +6,31 @@ import 'package:http/http.dart' as http;
 import 'package:path/src/context.dart';
 
 class WebHdfsClient {
-  final http.Client httpClient;
+  final String username;
+  final String delegationToken;
 
-  final Uri baseUri;
+  http.Client _httpClient;
+  Uri _baseUri;
 
-  WebHdfsClient(String host, int port, {http.Client httpClient})
-      : baseUri = Uri(host: host, port: port, pathSegments: ['webhdfs', 'v1']),
-        httpClient = httpClient ?? http.Client();
+  WebHdfsClient(String host, int port,
+      {http.Client httpClient, this.username, this.delegationToken}) {
+    var qp = <String, String>{};
+    if (username != null) {
+      qp['user.name'] = username;
+    }
+    if (delegationToken != null) {
+      qp['delegationToken'] = delegationToken;
+    }
+
+    _baseUri = Uri(
+        host: host,
+        port: port,
+        pathSegments: ['webhdfs', 'v1'],
+        queryParameters: qp);
+    _httpClient = httpClient ?? http.Client();
+  }
+
+  http.Client get httpClient => _httpClient;
+
+  Uri get baseUri => _baseUri;
 }
