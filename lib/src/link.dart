@@ -12,14 +12,14 @@ import 'file_system.dart';
 class HadoopFileSystemLink extends Link {
   @override
   // TODO: implement absolute
-  Link get absolute => null;
+  HadoopFileSystemLink get absolute => null;
 
   @override
   // TODO: implement basename
   String get basename => null;
 
   @override
-  Future<Link> create(String target, {bool recursive = false}) {
+  Future<HadoopFileSystemLink> create(String target, {bool recursive = false}) {
     // TODO: implement create
     return null;
   }
@@ -58,7 +58,7 @@ class HadoopFileSystemLink extends Link {
 
   @override
   // TODO: implement fileSystem
-  FileSystem get fileSystem => null;
+  HadoopFileSystem get fileSystem => null;
 
   @override
   // TODO: implement isAbsolute
@@ -66,20 +66,20 @@ class HadoopFileSystemLink extends Link {
 
   @override
   // TODO: implement parent
-  Directory get parent => null;
+  HadoopFileSystemDirectory get parent => null;
 
   @override
   // TODO: implement path
   String get path => null;
 
   @override
-  Future<Link> rename(String newPath) {
+  Future<HadoopFileSystemLink> rename(String newPath) {
     // TODO: implement rename
     return null;
   }
 
   @override
-  Link renameSync(String newPath) {
+  HadoopFileSystemLink renameSync(String newPath) {
     // TODO: implement renameSync
     return null;
   }
@@ -121,7 +121,7 @@ class HadoopFileSystemLink extends Link {
   }
 
   @override
-  Future<Link> update(String target) {
+  Future<HadoopFileSystemLink> update(String target) {
     // TODO: implement update
     return null;
   }

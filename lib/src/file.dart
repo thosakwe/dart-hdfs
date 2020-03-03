@@ -12,26 +12,26 @@ import 'link.dart';
 class HadoopFileSystemFile extends File {
   @override
   // TODO: implement absolute
-  File get absolute => null;
+  HadoopFileSystemFile get absolute => null;
 
   @override
   // TODO: implement basename
   String get basename => null;
 
   @override
-  Future<File> copy(String newPath) {
+  Future<HadoopFileSystemFile> copy(String newPath) {
     // TODO: implement copy
     return null;
   }
 
   @override
-  File copySync(String newPath) {
+  HadoopFileSystemFile copySync(String newPath) {
     // TODO: implement copySync
     return null;
   }
 
   @override
-  Future<File> create({bool recursive = false}) {
+  Future<HadoopFileSystemFile> create({bool recursive = false}) {
     // TODO: implement create
     return null;
   }
@@ -70,7 +70,7 @@ class HadoopFileSystemFile extends File {
 
   @override
   // TODO: implement fileSystem
-  FileSystem get fileSystem => null;
+  HadoopFileSystem get fileSystem => null;
 
   @override
   // TODO: implement isAbsolute
@@ -138,7 +138,7 @@ class HadoopFileSystemFile extends File {
 
   @override
   // TODO: implement parent
-  Directory get parent => null;
+  HadoopFileSystemDirectory get parent => null;
 
   @override
   // TODO: implement path
@@ -181,13 +181,13 @@ class HadoopFileSystemFile extends File {
   }
 
   @override
-  Future<File> rename(String newPath) {
+  Future<HadoopFileSystemFile> rename(String newPath) {
     // TODO: implement rename
     return null;
   }
 
   @override
-  File renameSync(String newPath) {
+  HadoopFileSystemFile renameSync(String newPath) {
     // TODO: implement renameSync
     return null;
   }
@@ -250,7 +250,7 @@ class HadoopFileSystemFile extends File {
   }
 
   @override
-  Future<File> writeAsBytes(List<int> bytes,
+  Future<HadoopFileSystemFile> writeAsBytes(List<int> bytes,
       {FileMode mode = io.FileMode.write, bool flush = false}) {
     // TODO: implement writeAsBytes
     return null;
@@ -263,7 +263,7 @@ class HadoopFileSystemFile extends File {
   }
 
   @override
-  Future<File> writeAsString(String contents,
+  Future<HadoopFileSystemFile> writeAsString(String contents,
       {FileMode mode = io.FileMode.write,
       Encoding encoding = utf8,
       bool flush = false}) {

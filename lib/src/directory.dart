@@ -7,36 +7,37 @@ import 'package:path/src/context.dart';
 
 import 'file.dart';
 import 'file_system.dart';
+import 'link.dart';
 
 class HadoopFileSystemDirectory extends Directory {
   @override
   // TODO: implement absolute
-  Directory get absolute => null;
+  HadoopFileSystemDirectory get absolute => null;
 
   @override
   // TODO: implement basename
   String get basename => null;
 
   @override
-  Directory childDirectory(String basename) {
+  HadoopFileSystemDirectory childDirectory(String basename) {
     // TODO: implement childDirectory
     return null;
   }
 
   @override
-  File childFile(String basename) {
+  HadoopFileSystemFile childFile(String basename) {
     // TODO: implement childFile
     return null;
   }
 
   @override
-  Link childLink(String basename) {
+  HadoopFileSystemLink childLink(String basename) {
     // TODO: implement childLink
     return null;
   }
 
   @override
-  Future<Directory> create({bool recursive = false}) {
+  Future<HadoopFileSystemDirectory> create({bool recursive = false}) {
     // TODO: implement create
     return null;
   }
@@ -47,13 +48,13 @@ class HadoopFileSystemDirectory extends Directory {
   }
 
   @override
-  Future<Directory> createTemp([String prefix]) {
+  Future<HadoopFileSystemDirectory> createTemp([String prefix]) {
     // TODO: implement createTemp
     return null;
   }
 
   @override
-  Directory createTempSync([String prefix]) {
+  HadoopFileSystemDirectory createTempSync([String prefix]) {
     // TODO: implement createTempSync
     return null;
   }
@@ -87,7 +88,7 @@ class HadoopFileSystemDirectory extends Directory {
 
   @override
   // TODO: implement fileSystem
-  FileSystem get fileSystem => null;
+  HadoopFileSystem get fileSystem => null;
 
   @override
   // TODO: implement isAbsolute
@@ -109,20 +110,20 @@ class HadoopFileSystemDirectory extends Directory {
 
   @override
   // TODO: implement parent
-  Directory get parent => null;
+  HadoopFileSystemDirectory get parent => null;
 
   @override
   // TODO: implement path
   String get path => null;
 
   @override
-  Future<Directory> rename(String newPath) {
+  Future<HadoopFileSystemDirectory> rename(String newPath) {
     // TODO: implement rename
     return null;
   }
 
   @override
-  Directory renameSync(String newPath) {
+  HadoopFileSystemDirectory renameSync(String newPath) {
     // TODO: implement renameSync
     return null;
   }
