@@ -14,7 +14,8 @@ Future<void> main() async {
   var app = Angel(logger: Logger('hdfs_demo'));
   var http = AngelHttp(app);
 
-  var hdfs = HadoopFileSystem('127.0.0.1', 4000);
+  var webHdfsClient = WebHdfsClient('127.0.0.1', 4000);
+  var hdfs = HadoopFileSystem(webHdfsClient);
   var vDir = CachingVirtualDirectory(app, hdfs, source: hdfs.directory('/'));
 
   app

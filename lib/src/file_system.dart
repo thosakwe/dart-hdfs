@@ -8,15 +8,12 @@ import 'package:path/src/context.dart';
 import 'directory.dart';
 import 'file.dart';
 import 'link.dart';
+import 'web_hdfs.dart';
 
 class HadoopFileSystem extends FileSystem {
-  final http.Client httpClient;
+  final WebHdfsClient webHdfsClient;
 
-  final Uri baseUri;
-
-  HadoopFileSystem(String host, int port, {http.Client httpClient})
-      : baseUri = Uri(host: host, port: port, pathSegments: ['webhdfs', 'v1']),
-        httpClient = httpClient ?? http.Client();
+  HadoopFileSystem(this.webHdfsClient);
 
   @override
   HadoopFileSystemDirectory get currentDirectory {}
